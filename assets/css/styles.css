@@ -396,6 +396,61 @@ textarea.form-input { resize: vertical; }
   .reg-table dt { margin-top: var(--space-sm); opacity: 0.55; }
 }
 
+/* ── DATA TABLES (directors, members) ────────────── */
+.table-wrap {
+  margin-top: var(--space-md);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(33, 28, 22, .07);
+  font-size: 0.95rem;
+}
+.data-table caption {
+  caption-side: bottom;
+  text-align: left;
+  font-size: 0.85rem;
+  opacity: 0.65;
+  padding-top: var(--space-sm);
+}
+.data-table th,
+.data-table td {
+  padding: 0.7rem var(--space-sm);
+  text-align: left;
+  border-bottom: 1px solid rgba(33, 28, 22, .08);
+  white-space: nowrap;
+}
+.data-table thead th {
+  background: var(--color-green-deep);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr:nth-child(even) td { background: rgba(92, 154, 79, .05); }
+.data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+/* narrow serial-number column — shrinks to its content */
+.data-table .col-sr { width: 1%; }
+.data-table tfoot td {
+  font-weight: 700;
+  background: rgba(92, 154, 79, .12);
+  border-bottom: none;
+}
+@media (max-width: 700px) {
+  .data-table { font-size: 0.88rem; }
+  .data-table th,
+  .data-table td { padding: 0.6rem 0.7rem; }
+  .data-table th,
+  .data-table td { white-space: normal; }
+}
+
 /* ── UTILITIES ───────────────────────────────────── */
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
 .section    { padding: var(--space-xl) 0; }
