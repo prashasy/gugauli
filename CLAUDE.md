@@ -194,8 +194,8 @@ Sections in order:
 3. Wave divider
 4. **Mission & Vision** — two-column grid, white bg
 5. **What is a Farmer Producer Company?** — plain-language explainer
-6. **Directors** — "Who to contact" cards (Vikhyat Kumar Yadav + Ashok Kumar, with phone/email), then a **Board of Directors** `.data-table`: Sr. No., name, designation, category, date of appointment (all 5 promoter-directors)
-7. **Member-shareholders** — two `.data-table`s: *Founding subscribers* (10 MOA subscribers, 1,000 shares each) and *Member register* (31 members: Sr. No., member, village, shares held), preceded by a four-card stat row (31 members / 305 shares / ₹3,050 / 2 villages)
+6. **Executive Directors** — "Who to contact" cards (Vikhyat Kumar Yadav + Ashok Kumar, with phone/email), then an **Active Directors** `.data-table`: name, designation, category, appointed (all 5 promoter-directors)
+7. **Member-shareholders** — two `.data-table`s: *Founding Shareholders* (10 MOA subscribers, 1,000 shares each) and *Member Shareholders* (31 members: Sr. No., member, village, shares allocated), preceded by a four-card stat row (31 members / 305 shares / ₹3,050 / 2 villages)
 8. **Registration details** — `<dl>` table: legal name, type, CIN, GSTIN, incorporated date, address
 
 ### products.html — What We Grow
