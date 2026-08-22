@@ -24,8 +24,8 @@ This file is automatically read by Claude Code at session start. It contains eve
 - **Incorporated:** 8 April 2026
 - **Directors (all 5 are promoters, appointed 8 April 2026):** Dharampal · Makarandh · Santosh · Vikhyat Kumar Yadav · Ashok Kumar
 - **Member-shareholders (10 founding MOA subscribers, 1,000 shares each = 10,000 shares):** Reshu Singh, Santosh, Dharampal, Guddi Singh, Makarandh, Ashok Kumar, Bansh Raj Singh, Raj Kamal Singh Patel, Ram Karan, Vikhyat Kumar Yadav
-- **Member register (31 members, Gugauli & Palra villages, Tindwari block):** 305 shares between them, ₹3,050 contributed. Transcribed from the handwritten register sheets; #18 Bal Kishun and #21 Dridhpal are still unconfirmed spellings (TODO comment in about.html).
-- **NEVER publish Aadhaar numbers** — the handwritten member register sheets contain a 12-digit Aadhaar for every member. Aadhaar must never appear on the site, and the register scans must not be uploaded unless the Aadhaar column and father's/husband's-name column are redacted.
+- **Member register (46 members; Gugauli, Palra & Ujrehta villages; Tindwari & Badokhar Khurd blocks):** 410 shares between them, ₹4,100 contributed. Transcribed from the handwritten register sheets; #18 Bal Kishun and #21 Dridhpal are still unconfirmed spellings (TODO comment in about.html).
+- **NEVER publish Aadhaar numbers, caste or gender** — the member register sheets carry a 12-digit Aadhaar, and the later sheets also carry caste (`जाति`) and gender (`लिंग`) columns. Aadhaar must never appear on the site, and the register scans must not be uploaded unless the Aadhaar column and father's/husband's-name column are redacted.
 - **Never publish from the MOA or the register:** members' father's/husband's names, C/O names, or residential addresses — names, village and shareholding only. DINs are also omitted from the site.
 
 ### Registration identifiers
@@ -195,7 +195,7 @@ Sections in order:
 4. **Mission & Vision** — two-column grid, white bg
 5. **What is a Farmer Producer Company?** — plain-language explainer
 6. **Executive Directors** — "Who to contact" cards (Vikhyat Kumar Yadav + Ashok Kumar, with phone/email), then an **Active Directors** `.data-table`: name, designation, category, appointed (all 5 promoter-directors)
-7. **Member-shareholders** — two `.data-table`s: *Founding Shareholders* (10 MOA subscribers, 1,000 shares each) and *Member Shareholders* (31 members: Sr. No., member, village, shares allocated), preceded by a four-card stat row (31 members / 305 shares / ₹3,050 / 2 villages)
+7. **Member-shareholders** — two `.data-table`s: *Founding Shareholders* (10 MOA subscribers, 1,000 shares each) and *Member Shareholders* (46 members: Sr. No., member, village, shares allocated), preceded by a four-card stat row (46 members / 410 shares / ₹4,100 / 3 villages)
 8. **Registration details** — `<dl>` table: legal name, type, CIN, GSTIN, incorporated date, address
 
 ### products.html — What We Grow
