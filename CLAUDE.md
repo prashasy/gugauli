@@ -24,7 +24,7 @@ This file is automatically read by Claude Code at session start. It contains eve
 - **Incorporated:** 8 April 2026
 - **Directors (all 5 are promoters, appointed 8 April 2026):** Dharampal · Makarandh · Santosh · Vikhyat Kumar Yadav · Ashok Kumar
 - **Member-shareholders (10 founding MOA subscribers, 1,000 shares each = 10,000 shares):** Reshu Singh, Santosh, Dharampal, Guddi Singh, Makarandh, Ashok Kumar, Bansh Raj Singh, Raj Kamal Singh Patel, Ram Karan, Vikhyat Kumar Yadav
-- **Member register (46 members; Gugauli, Palra & Ujrehta villages; Tindwari & Badokhar Khurd blocks):** 410 shares between them, ₹4,100 contributed. Transcribed from the handwritten register sheets; #18 Bal Kishun and #21 Dridhpal are still unconfirmed spellings (TODO comment in about.html).
+- **Member register (201 members; 9 villages — Bambiya, Chirhuta, Gugauli, Palra, Ujrehta, Alona, Kapsa, Itaura, Banda; across Tindwari, Badokhar Khurd, Banda Sadar, Mahoba & Jalaun blocks):** 1,329 shares between them, ₹13,290 contributed. Transcribed from the handwritten register sheets into `assets/js/members-data.js`, which is the source of truth — the stat cards in `about.html` and the figures in the profile deck must match it. Row 173 was recorded only as "पत्नी" (wife of Shivgopal, #174) with no personal name (TODO in `members-data.js`).
 - **NEVER publish Aadhaar numbers, caste or gender** — the member register sheets carry a 12-digit Aadhaar, and the later sheets also carry caste (`जाति`) and gender (`लिंग`) columns. Aadhaar must never appear on the site, and the register scans must not be uploaded unless the Aadhaar column and father's/husband's-name column are redacted.
 - **Never publish from the MOA or the register:** members' father's/husband's names, C/O names, or residential addresses — names, village and shareholding only. DINs are also omitted from the site.
 
@@ -86,9 +86,19 @@ gugauli/
 │   ├── js/
 │   │   └── main.js        ← Mobile nav + form handler + footer year
 │   ├── img/
-│   │   └── .gitkeep       ← Photos go here when provided
-│   └── icons/
-│       └── favicon.svg    ← Placeholder seedling SVG (TODO: replace with real logo)
+│   │   ├── logo.jpeg      ← ORIGINAL owner-supplied logo photo (614×328) — master
+│   │   ├── logo.png       ← Oval-masked, transparent (584×300) — deck source, JSON-LD
+│   │   ├── logo.webp      ← Oval-masked (584×300) — index hero
+│   │   ├── logo-sm.webp   ← Oval-masked (208×107) — header of all 6 pages
+│   │   ├── og-image.jpg   ← 1200×630 share card: logo on brand green
+│   │   ├── vikhyat.jpg · ashok.jpg   ← Director photos
+│   │   └── .gitkeep
+│   ├── icons/
+│   │   ├── favicon.png            ← 64×64, round seal cropped from the logo
+│   │   ├── apple-touch-icon.png   ← 180×180, same crop
+│   │   └── favicon.svg            ← UNUSED placeholder from v1; kept as a fallback
+│   └── docs/
+│       └── Gugauli-Organic-Producer-Company-Profile.pptx  ← 12-slide company profile
 └── docs/
     └── superpowers/
         └── plans/
@@ -364,7 +374,7 @@ Search `<!-- TODO` across all HTML files to find every placeholder. Summary:
 | 1 | Real phone/WhatsApp number | All HTML files + `site.config.js` |
 | 2 | Real email address | All HTML files + `site.config.js` |
 | 3 | Web3Forms access key | `contact.html` + `site.config.js` |
-| 4 | Real logo (SVG/PNG transparent) | Replace `<svg class="site-header__logo">` in all headers |
+| 4 | Clean logo artwork | The site now uses the owner-supplied photo of the printed sticker (`assets/img/logo.jpeg`). It is soft at small sizes because it is a photograph. A vector or transparent-PNG original would be a clear upgrade — see “Update the logo” in §15 |
 | 5 | Farm/farmer photos | `assets/img/` — replace `placeholder-img` divs in `products.html` + `about.html` |
 | 6 | Organic certification status | `products.html` — "committed to organic practices" paragraph |
 | 7 | Confirmed crop list | `products.html` grid + `index.html` preview section |
@@ -373,9 +383,8 @@ Search `<!-- TODO` across all HTML files to find every placeholder. Summary:
 | 10 | Confirm C/O line public display | All address blocks — "C/O Ramkesh Yadav" line |
 | 11 | Social media handles | Footer of all pages — social slot is commented out |
 | 12 | Final domain | `site.config.js` + `sitemap.xml` + all canonical/OG meta tags |
-| 13 | OG share image | `assets/img/og-image.jpg` (1200×630), update `og:image` on all pages |
-| 14 | Google Maps precise embed | `contact.html` — replace generic query URL with Place embed |
-| 15 | Confirm membership process | `farmers.html` — 3-step How to Join section |
+| 13 | Google Maps precise embed | `contact.html` — replace generic query URL with Place embed |
+| 14 | Confirm membership process | `farmers.html` — 3-step How to Join section |
 
 ---
 
@@ -431,12 +440,63 @@ grep -r "XXXXXXXXXXX" .   # find all occurrences first
 4. Add `style="border-radius: var(--radius);"` to match card styling
 
 **Update the logo:**
-1. Save SVG/PNG to `assets/icons/logo.svg` (or `logo.png`)
-2. In every page's header, replace the `<svg class="site-header__logo">` block with:
-   ```html
-   <img class="site-header__logo" src="/assets/icons/logo.svg" alt="" aria-hidden="true">
-   ```
-3. Update favicon: save a 32×32 version to `assets/icons/favicon.svg`
+
+The master is `assets/img/logo.jpeg` — the owner's photo of the printed oval sticker
+(614×328). Everything else is derived from it. **Do not hand-edit the derivatives; regenerate
+them**, or they will drift out of sync.
+
+| File | Used by | Derived how |
+|---|---|---|
+| `img/logo.jpeg` | nothing directly | The master. Keep it. |
+| `img/logo.png` | JSON-LD `logo`, deck source | Oval mask → RGBA, cropped |
+| `img/logo.webp` | `index.html` hero | Same, as WebP (34 KB vs 309 KB) |
+| `img/logo-sm.webp` | header of all 6 pages | Same, scaled to 208×107 |
+| `img/og-image.jpg` | `og:image` on all pages | Logo centred on `--color-green-deep`, 1200×630 |
+| `icons/favicon.png` | `<link rel="icon">` | Round seal from the sticker centre, 64×64 |
+| `icons/apple-touch-icon.png` | `<link rel="apple-touch-icon">` | Same crop, 180×180 |
+
+The oval mask is an ellipse at `cx=307 cy=171 a=292 b=150` in the master's coordinates; the
+round-seal crop is `cx=306 cy=152 r=135`. The mask exists because the photo includes the
+brown table surface around the sticker, which would otherwise show as square corners against
+the dark green header. It is supersampled 4× for a smooth edge.
+
+Two constraints to respect:
+
+- **The logo is a wide oval (~1.95:1), not a square.** `.site-header__logo` sets
+  `height: 40px; width: auto` for exactly this reason — setting both dimensions squashes it.
+  The `width="78" height="40"` attributes on the six `<img>` tags exist to prevent layout
+  shift and must match the rendered box.
+- **It is a photograph, so it does not survive small sizes.** At 40px in the header and 46px
+  in the deck's corner mark it reads as a dark crest rather than legible artwork. That is
+  inherent to the source, not a bug. If a clean vector or transparent-PNG version of the
+  logo ever arrives, it will look markedly better — `assets/icons/logo-mark.svg` and
+  `logo-full.svg` are an earlier vector rebuild kept in the repo as a fallback for exactly
+  that case (currently unreferenced).
+
+**Update the company profile deck:**
+
+`assets/docs/Gugauli-Organic-Producer-Company-Profile.pptx` is a committed artifact —
+12 slides, linked from the footer of every page and from a download section at the
+bottom of `about.html`. It was generated with a `pptxgenjs` script kept **outside** this
+repo (no npm here, per §2). To revise it, either edit the `.pptx` directly in
+PowerPoint, or regenerate and re-copy it. If you change it, update the stated file size
+in the two link labels (`Company profile (PPT, 0.5 MB)`).
+
+Figures in the deck come from `about.html` / `assets/js/members-data.js` — 201 members,
+1,329 shares, ₹13,290, 9 villages. **Keep the deck and the site in step when the member
+register changes.** The deck carries no PAN, TAN, Aadhaar, caste, gender or member
+addresses, and must stay that way.
+
+The logo appears in the deck as **three separate JPEGs**, each pre-composited onto the
+background it sits on — green for the title and closing slides, paper for the card on
+slide 3, white for the corner mark. This is deliberate: the logo is a photo, and twelve
+slides' worth of alpha PNGs weighed 1.5 MB against 527 KB for the flattened JPEGs, with
+no visible difference. If you change the slide backgrounds, regenerate these to match.
+
+Also note the village bar chart on slide 8 is **drawn from shapes, not a native
+PowerPoint chart** — the deck is a public download that has to open correctly in
+PowerPoint, Keynote, Google Slides and LibreOffice, and Keynote would not render the
+native chart at all.
 
 **Add a new section to an existing page:**
 Use the existing section structure:

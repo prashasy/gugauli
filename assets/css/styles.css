@@ -97,11 +97,15 @@ p  { max-width: 68ch; }
   color: #fff;
   flex-shrink: 0;
 }
+/* The logo is a wide oval (~1.95:1), not a square — set the height and let the
+   width follow, or it gets squashed. */
 .site-header__logo {
-  width: 40px;
   height: 40px;
-  border-radius: 4px;
+  width: auto;
   flex-shrink: 0;
+}
+@media (max-width: 420px) {
+  .site-header__logo { height: 34px; }
 }
 .site-header__name {
   font-family: var(--font-display);

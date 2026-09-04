@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 400" role="img" aria-label="Gugauli Organic Producer Company Limited — Growing for Life">
+  <!-- Full circular badge: vector rebuild of the printed company seal.
+       Outer ring : ORGANIC PRODUCER COMPANY LTD  /  GROWING FOR LIFE
+       Centre     : GUGAULI wordmark, rising sun + seedling over soil
+       Compact version for small sizes: logo-mark.svg -->
+  <defs>
+    <!-- left → over the top → right (sweep 1) so top lettering reads upright -->
+    <path id="ring-top" d="M24 200A176 176 0 0 1 376 200" fill="none"/>
+    <!-- left → under the bottom → right (sweep 0) so bottom lettering reads upright -->
+    <path id="ring-bot" d="M32 200A168 168 0 0 0 368 200" fill="none"/>
+  </defs>
+
+  <!-- frame -->
+  <circle cx="200" cy="200" r="197" fill="#245C36"/>
+  <circle cx="200" cy="200" r="158" fill="#F7F4EC"/>
+  <circle cx="200" cy="200" r="151" fill="none" stroke="#5C9A4F" stroke-width="2"/>
+
+  <!-- ring lettering -->
+  <text font-family="Georgia, 'Tiro Devanagari', serif" font-weight="700"
+        font-size="24" letter-spacing="3" fill="#F7F4EC" text-anchor="middle">
+    <textPath href="#ring-top" xlink:href="#ring-top" startOffset="50%">ORGANIC PRODUCER COMPANY LTD</textPath>
+  </text>
+  <text font-family="Georgia, 'Tiro Devanagari', serif" font-weight="700"
+        font-size="23" letter-spacing="4" fill="#E0A12E" text-anchor="middle">
+    <textPath href="#ring-bot" xlink:href="#ring-bot" startOffset="50%">GROWING FOR LIFE</textPath>
+  </text>
+
+  <!-- separators where the two arcs meet -->
+  <circle cx="25" cy="200" r="5" fill="#E0A12E"/>
+  <circle cx="375" cy="200" r="5" fill="#E0A12E"/>
+
+  <!-- wordmark -->
+  <text x="200" y="130" font-family="Georgia, 'Tiro Devanagari', serif" font-weight="700"
+        font-size="42" letter-spacing="2" fill="#245C36" text-anchor="middle">GUGAULI</text>
+
+  <!-- rising sun -->
+  <circle cx="200" cy="204" r="40" fill="#E0A12E"/>
+  <g stroke="#E0A12E" stroke-width="8" stroke-linecap="round">
+    <line x1="200" y1="146" x2="200" y2="157"/>
+    <line x1="156" y1="160" x2="165" y2="169"/>
+    <line x1="244" y1="160" x2="235" y2="169"/>
+    <line x1="144" y1="204" x2="155" y2="204"/>
+    <line x1="256" y1="204" x2="245" y2="204"/>
+  </g>
+
+  <!-- seedling -->
+  <path d="M200 282V208" stroke="#245C36" stroke-width="10" stroke-linecap="round"/>
+  <path d="M200 224c-26 0-46-16-51-40 26-2 46 13 51 40Z" fill="#245C36"/>
+  <path d="M200 224c26 0 46-16 51-40-26-2-46 13-51 40Z" fill="#5C9A4F"/>
+
+  <!-- soil -->
+  <path d="M136 288c21-11 45-11 64 0s43 11 64 0" fill="none" stroke="#6B4A2B" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- inner foot line -->
+  <text x="200" y="322" font-family="Hind, system-ui, sans-serif" font-weight="600"
+        font-size="13" letter-spacing="2" fill="#5C9A4F" text-anchor="middle">EST. 2026</text>
+</svg>
